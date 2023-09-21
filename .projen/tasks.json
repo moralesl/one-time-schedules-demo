@@ -186,13 +186,13 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/node,aws-cdk,esbuild,npm-check-updates,projen,ts-node,typescript,aws-cdk-lib,constructs"
+          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@aws-cdk/aws-scheduler-alpha,@types/node,aws-cdk,esbuild,npm-check-updates,projen,ts-node,typescript,aws-cdk-lib,constructs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/node aws-cdk esbuild npm-check-updates projen ts-node typescript aws-cdk-lib constructs"
+          "exec": "yarn upgrade @aws-cdk/aws-scheduler-alpha @types/node aws-cdk esbuild npm-check-updates projen ts-node typescript aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"

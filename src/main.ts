@@ -1,11 +1,15 @@
-import { App, Stack, StackProps } from 'aws-cdk-lib';
-import { Construct } from 'constructs';
+import { App, RemovalPolicy, Stack, StackProps } from "aws-cdk-lib";
+import { Construct } from "constructs";
+import { Group } from "@aws-cdk/aws-scheduler-alpha";
 
 export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
     super(scope, id, props);
 
-    // define resources here...
+    const vendorStockUpdatesSchedulerGroup = new Group(this, "VendorStockUpdatesSchedulerGroup", {
+      groupName: "VendorStockUpdatesSchedulerGroup",
+      removalPolicy: RemovalPolicy.DESTROY,
+    });
   }
 }
 
@@ -17,7 +21,7 @@ const devEnv = {
 
 const app = new App();
 
-new MyStack(app, 'one-time-schedules-demo-dev', { env: devEnv });
+new MyStack(app, "one-time-schedules-demo-dev", { env: devEnv });
 // new MyStack(app, 'one-time-schedules-demo-prod', { env: prodEnv });
 
 app.synth();

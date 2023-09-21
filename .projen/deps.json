@@ -1,6 +1,10 @@
 {
   "dependencies": [
     {
+      "name": "@aws-cdk/aws-scheduler-alpha",
+      "type": "build"
+    },
+    {
       "name": "@types/node",
       "version": "^16",
       "type": "build"

@@ -22,6 +22,7 @@
     "projen": "npx projen"
   },
   "devDependencies": {
+    "@aws-cdk/aws-scheduler-alpha": "^2.96.2-alpha.0",
     "@types/node": "^16",
     "aws-cdk": "^2.96.2",
     "esbuild": "^0.19.3",
