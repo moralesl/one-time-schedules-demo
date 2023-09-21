@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@types/node": "^16",
-    "aws-cdk": "^2.1.0",
+    "aws-cdk": "^2.96.2",
     "esbuild": "^0.19.3",
     "npm-check-updates": "^16",
     "projen": "^0.73.27",
@@ -31,7 +31,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.1.0",
+    "aws-cdk-lib": "^2.96.2",
     "constructs": "^10.0.5"
   },
   "license": "Apache-2.0",

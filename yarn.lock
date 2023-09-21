@@ -462,7 +462,7 @@ astral-regex@^2.0.0:
   resolved "https://registry.yarnpkg.com/astral-regex/-/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
-aws-cdk-lib@^2.1.0:
+aws-cdk-lib@^2.96.2:
   version "2.96.2"
   resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.96.2.tgz#d9647ad402525e92740df5a083777698698fd7de"
   integrity sha512-wDAdPUfNlteLQKrapd5c7hNYHWPzHmFfuMSrddFCajjoscsnd0LeUxM2yAzwJV7vLNp00q2SgUZqRQHcN98dmg==
@@ -481,7 +481,7 @@ aws-cdk-lib@^2.1.0:
     table "^6.8.1"
     yaml "1.10.2"
 
-aws-cdk@^2.1.0:
+aws-cdk@^2.96.2:
   version "2.96.2"
   resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.96.2.tgz#49112063e773bebb7b39b2ba834fe61cda40a295"
   integrity sha512-13ERpPV99OFAD75PLOtl0rRMXTWn6bCrmUPwYKkLwIMkj2xWCBiwo2Y9Qg+UzEszm5NMHA1N4ichSvuZ0mt2IQ==
