@@ -12,6 +12,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   mergify: false,
   npmignoreEnabled: false,
   eslint: false,
-  jest: false
+  jest: false,
+  disableTsconfigDev: true
 });
 project.synth();
