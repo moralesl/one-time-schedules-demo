@@ -6,13 +6,19 @@ const project = new awscdk.AwsCdkTypeScriptApp({
 
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  devDeps: ["@aws-cdk/aws-scheduler-alpha"],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  devDeps: ['@aws-cdk/aws-scheduler-alpha'] /* Build dependencies for this module. */,
+  // packageName: undefined,  /* The 'name' in package.json. */
 
   mergify: false,
   npmignoreEnabled: false,
   eslint: false,
   jest: false,
-  disableTsconfigDev: true
+  disableTsconfigDev: true,
+
+  buildWorkflowTriggers: {
+    push: {},
+    pullRequest: {},
+    workflowDispatch: {},
+  },
 });
 project.synth();
