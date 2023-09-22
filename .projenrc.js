@@ -4,9 +4,12 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   defaultReleaseBranch: 'main',
   name: 'one-time-schedules-demo',
 
-  // deps: [],                /* Runtime dependencies of this module. */
+  deps: ['@types/aws-lambda'],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  devDeps: ['@aws-cdk/aws-scheduler-alpha'] /* Build dependencies for this module. */,
+  devDeps: [
+    '@aws-cdk/aws-scheduler-alpha',
+    '@aws-cdk/aws-apigatewayv2-alpha',
+    '@aws-cdk/aws-apigatewayv2-integrations-alpha'] /* Build dependencies for this module. */,
   // packageName: undefined,  /* The 'name' in package.json. */
 
   mergify: false,

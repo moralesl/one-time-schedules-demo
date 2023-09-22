@@ -1,6 +1,14 @@
 {
   "dependencies": [
     {
+      "name": "@aws-cdk/aws-apigatewayv2-alpha",
+      "type": "build"
+    },
+    {
+      "name": "@aws-cdk/aws-apigatewayv2-integrations-alpha",
+      "type": "build"
+    },
+    {
       "name": "@aws-cdk/aws-scheduler-alpha",
       "type": "build"
     },
@@ -34,6 +42,10 @@
     {
       "name": "typescript",
       "type": "build"
+    },
+    {
+      "name": "@types/aws-lambda",
+      "type": "runtime"
     },
     {
       "name": "aws-cdk-lib",
