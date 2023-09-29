@@ -52,6 +52,12 @@ const scheduleInStock = async (product_id: string, reminderDate: string) => {
       pathParameters: {
         product_id: product_id,
       },
+      schedulerContext: {
+        arn: "<aws.scheduler.schedule-arn>",
+        timestamp: "<aws.scheduler.schedule-time>",
+        executionId: "<aws.scheduler.execution-id>",
+        attemptNr: "<aws.scheduler.attempt-number>"
+      }
     }),
   };
 
