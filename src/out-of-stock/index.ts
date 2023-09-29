@@ -31,7 +31,7 @@ const setProductUnavailable = async (product_id: string) => {
   const params = {
     TableName: menuItemAvailabilityTableName,
     Key: {
-      PK: `V#FP_SG#${product_id}`,
+      PK: product_id,
     },
     UpdateExpression: "SET isAvailable = :isAvailable",
     ExpressionAttributeValues: {
@@ -62,7 +62,7 @@ const scheduleInStock = async (product_id: string, reminderDate: string) => {
   };
 
   const schedulerInput: AWS.Scheduler.CreateScheduleInput = {
-    Name: `${formatCompliantName("V#FP_SG#" + product_id)}__${formatCompliantName(reminderDate)}__in_stock_reminder`,
+    Name: `${formatCompliantName(product_id)}__${formatCompliantName(reminderDate)}__in_stock_reminder`,
     FlexibleTimeWindow: {
       Mode: "OFF",
     },

@@ -25,7 +25,7 @@ const setProductAvailable = async (product_id: String) => {
   const params = {
     TableName: menuItemAvailabilityTableName,
     Key: {
-      PK: `V#FP_SG#${product_id}`,
+      PK: product_id,
     },
     UpdateExpression: "SET isAvailable = :isAvailable",
     ExpressionAttributeValues: {

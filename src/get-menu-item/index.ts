@@ -37,7 +37,7 @@ const getProductDetails = async (product_id: string) => {
   const params = {
     TableName: menuItemAvailabilityTableName,
     Key: {
-      PK: `V#FP_SG#${product_id}`,
+      PK: product_id,
     },
   };
 

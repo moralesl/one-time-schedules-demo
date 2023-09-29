@@ -11,7 +11,7 @@ function parseRange(range: string): number[] {
 
 async function setRangeOfProductIdsOutOfStock(productIds: number[]) {
   for (const productId of productIds) {
-    const url = `${baseUrl}${productId}/stock`;
+    const url = `${baseUrl}/V#FP_SG#${productId}/stock`;
     await axios
       .delete(url)
       .then((response) => {

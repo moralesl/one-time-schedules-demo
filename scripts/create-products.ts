@@ -9,12 +9,11 @@ const tableName = "MenuItemAvailabilityTable";
 // Helper function to generate a random item
 function generateRandomItem(product_id: number): PutItemCommand {
     const randomItem = {
-      PK: `V#FP_SG#${product_id}`,
+      PK: product_id,
       SK: `P#apfel_schorle${product_id}`,
       brandId: faker.datatype.number({ min: 1, max: 10 }).toString(),
       categoryId: faker.datatype.number({ min: 1, max: 10 }).toString(),
       ET: "P",
-      id: product_id.toString(),
       isAvailable: true,
       stockLevel: faker.datatype.number({ min: 1, max: 100 }).toString(),
     };
