@@ -1,9 +1,7 @@
 import { Handler } from "aws-lambda";
-import { DynamoDB, Scheduler } from "aws-sdk";
-import { randomUUID } from "crypto";
+import { DynamoDB } from "aws-sdk";
 
 const dynamoDB = new DynamoDB.DocumentClient();
-const scheduler = new Scheduler();
 
 const menuItemAvailabilityTableName = process.env.MENU_ITEM_AVAILABILITY_TABLE_NAME ?? "undefined";
 
@@ -13,7 +11,7 @@ export const handler: Handler = async (event) => {
   try {
     const { product_id } = event.pathParameters;
 
-    const resultDdb = await setProductUnavailable(product_id);
+    const resultDdb = await setProductAvailable(product_id);
     console.log("resultDdb", resultDdb);
 
     return { statusCode: 200, body: JSON.stringify(resultDdb.Attributes) };
@@ -23,7 +21,7 @@ export const handler: Handler = async (event) => {
   }
 };
 
-const setProductUnavailable = async (product_id: String) => {
+const setProductAvailable = async (product_id: String) => {
   const params = {
     TableName: menuItemAvailabilityTableName,
     Key: {
@@ -31,7 +29,7 @@ const setProductUnavailable = async (product_id: String) => {
     },
     UpdateExpression: "SET isAvailable = :isAvailable",
     ExpressionAttributeValues: {
-      ":isAvailable": "false",
+      ":isAvailable": "true",
     },
     ReturnValues: "ALL_NEW",
   };

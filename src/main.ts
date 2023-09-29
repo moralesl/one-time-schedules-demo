@@ -24,6 +24,7 @@ export class MyStack extends Stack {
         type: AttributeType.STRING,
       },
       billingMode: BillingMode.PAY_PER_REQUEST,
+      removalPolicy: RemovalPolicy.DESTROY,
     });
 
     const menuAvailabilityApi = new HttpApi(this, "MenuAvailabilityApi", {
@@ -33,8 +34,8 @@ export class MyStack extends Stack {
     const getMenuItemHandler = this._createMenuHandler("get-menu-item", menuItemAvailabilityTable);
     menuItemAvailabilityTable.grantReadData(getMenuItemHandler);
 
-    const updateStockHandler = this._createMenuHandler("update-stock", menuItemAvailabilityTable);
-    menuItemAvailabilityTable.grantWriteData(updateStockHandler);
+    const inStockHandler = this._createMenuHandler("in-stock", menuItemAvailabilityTable);
+    menuItemAvailabilityTable.grantWriteData(inStockHandler);
 
     const outOfStockHandler = this._createMenuHandler(
       "out-of-stock",
@@ -44,17 +45,17 @@ export class MyStack extends Stack {
     menuItemAvailabilityTable.grantWriteData(outOfStockHandler);
 
     menuAvailabilityApi.addRoutes({
-      path: "/menu/{item_id}",
+      path: "/menu/{product_id}",
       methods: [HttpMethod.GET],
       integration: new HttpLambdaIntegration("GetMenuItem", getMenuItemHandler),
     });
     menuAvailabilityApi.addRoutes({
-      path: "/menu/{item_id}/stock",
+      path: "/menu/{product_id}/stock",
       methods: [HttpMethod.PUT],
-      integration: new HttpLambdaIntegration("UpdateStock", updateStockHandler),
+      integration: new HttpLambdaIntegration("InStock", inStockHandler),
     });
     menuAvailabilityApi.addRoutes({
-      path: "/menu/{item_id}/stock",
+      path: "/menu/{product_id}/stock",
       methods: [HttpMethod.DELETE],
       integration: new HttpLambdaIntegration("OutOfStock", outOfStockHandler),
     });

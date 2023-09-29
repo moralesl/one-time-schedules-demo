@@ -1,0 +1,38 @@
+{
+    "version": "2.0",
+    "routeKey": "GET /menu/{product_id}",
+    "rawPath": "/menu/test",
+    "rawQueryString": "",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "content-length": "0",
+      "host": "lu4g35dep6.execute-api.eu-central-1.amazonaws.com",
+      "user-agent": "Thunder Client (https://www.thunderclient.com)",
+      "x-amzn-trace-id": "Root=1-6515e8e8-03bc03c47e6f18be6c209980",
+      "x-forwarded-for": "109.125.100.204",
+      "x-forwarded-port": "443",
+      "x-forwarded-proto": "https"
+    },
+    "requestContext": {
+      "accountId": "690431608027",
+      "apiId": "lu4g35dep6",
+      "domainName": "lu4g35dep6.execute-api.eu-central-1.amazonaws.com",
+      "domainPrefix": "lu4g35dep6",
+      "http": {
+        "method": "GET",
+        "path": "/menu/test",
+        "protocol": "HTTP/1.1",
+        "sourceIp": "109.125.100.204",
+        "userAgent": "Thunder Client (https://www.thunderclient.com)"
+      },
+      "requestId": "L_FUWjRHliAEPZg=",
+      "routeKey": "GET /menu/{product_id}",
+      "stage": "$default",
+      "time": "28/Sep/2023:20:58:16 +0000",
+      "timeEpoch": 1695934696365
+    },
+    "pathParameters": { product_id: "test" },
+    "isBase64Encoded": false
+  }
+  
