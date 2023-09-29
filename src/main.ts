@@ -7,6 +7,7 @@ import { AttributeType, BillingMode, Table } from "aws-cdk-lib/aws-dynamodb";
 import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
 import { HttpLambdaIntegration } from "@aws-cdk/aws-apigatewayv2-integrations-alpha";
 import { HttpApi, HttpMethod } from "@aws-cdk/aws-apigatewayv2-alpha";
+import { Effect, PolicyStatement, Role, ServicePrincipal } from "aws-cdk-lib/aws-iam";
 
 export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
@@ -15,6 +16,10 @@ export class MyStack extends Stack {
     const vendorStockUpdatesSchedulerGroup = new Group(this, "VendorStockUpdatesSchedulerGroup", {
       groupName: "VendorStockUpdatesSchedulerGroup",
       removalPolicy: RemovalPolicy.DESTROY,
+    });
+
+    const schedulerRole = new Role(this, 'SchedulerRole', {
+      assumedBy: new ServicePrincipal('scheduler.amazonaws.com'),
     });
 
     const menuItemAvailabilityTable = new Table(this, "MenuItemAvailabilityTable", {
@@ -36,13 +41,23 @@ export class MyStack extends Stack {
 
     const inStockHandler = this._createMenuHandler("in-stock", menuItemAvailabilityTable);
     menuItemAvailabilityTable.grantWriteData(inStockHandler);
+    inStockHandler.grantInvoke(schedulerRole);
 
     const outOfStockHandler = this._createMenuHandler(
       "out-of-stock",
       menuItemAvailabilityTable,
-      vendorStockUpdatesSchedulerGroup
+      vendorStockUpdatesSchedulerGroup,
+      schedulerRole.roleArn,
+      inStockHandler.functionArn
     );
     menuItemAvailabilityTable.grantWriteData(outOfStockHandler);
+    vendorStockUpdatesSchedulerGroup.grantWriteSchedules(outOfStockHandler);
+    outOfStockHandler.addToRolePolicy(
+      new PolicyStatement({
+        actions: ["iam:PassRole"],
+        resources: [schedulerRole.roleArn],
+        effect: Effect.ALLOW,
+      }));
 
     menuAvailabilityApi.addRoutes({
       path: "/menu/{product_id}",
@@ -66,7 +81,9 @@ export class MyStack extends Stack {
   private _createMenuHandler(
     handlerName: String,
     menuItemAvailabilityTable: Table,
-    vendorStockUpdatesSchedulerGroup?: Group
+    vendorStockUpdatesSchedulerGroup?: Group,
+    reminderTargetRoleArn?: string,
+    reminderTargetArn?: string,
   ) {
     return new NodejsFunction(this, `${handlerName}-handler`, {
       runtime: Runtime.NODEJS_18_X,
@@ -74,7 +91,9 @@ export class MyStack extends Stack {
       handler: "handler",
       environment: {
         MENU_ITEM_AVAILABILITY_TABLE_NAME: menuItemAvailabilityTable.tableName,
-        ...(vendorStockUpdatesSchedulerGroup ? { SCHEDULER_GROUP_ARN: vendorStockUpdatesSchedulerGroup.groupArn } : {}),
+        ...(vendorStockUpdatesSchedulerGroup ? { SCHEDULER_GROUP_NAME: vendorStockUpdatesSchedulerGroup.groupName } : {}),
+        ...(reminderTargetRoleArn ? { REMINDER_TARGET_ROLE_ARN: reminderTargetRoleArn } : {}),
+        ...(reminderTargetArn ? { REMINDER_TARGET_ARN: reminderTargetArn } : {}),
       },
     });
   }
