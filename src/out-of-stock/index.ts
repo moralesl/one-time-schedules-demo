@@ -55,10 +55,8 @@ const scheduleInStock = async (product_id: string, reminderDate: string) => {
     }),
   };
 
-  console.log("target", target);
-
   const schedulerInput: AWS.Scheduler.CreateScheduleInput = {
-    Name: `${product_id}__${formatCompliantName(reminderDate)}__in_stock_reminder`,
+    Name: `${formatCompliantName("V#FP_SG#" + product_id)}__${formatCompliantName(reminderDate)}__in_stock_reminder`,
     FlexibleTimeWindow: {
       Mode: "OFF",
     },
@@ -68,7 +66,6 @@ const scheduleInStock = async (product_id: string, reminderDate: string) => {
     GroupName: process.env.SCHEDULER_GROUP_NAME!,
     ClientToken: randomUUID(),
   };
-  console.log("schedulerInput", schedulerInput);
 
   return await scheduler.createSchedule(schedulerInput).promise();
 };
@@ -83,8 +80,8 @@ const dateInXMinutes = (date: Date, minutes: number) => {
 
 /** Scheduler name must comply with the following pattern: [0-9a-zA-Z-_.]+
  * Otherwise you see:
- * Value '2__2023-09-29T07:17:50__in_stock_reminder' at 'name' failed to satisfy constraint: Member must satisfy regular expression pattern: [0-9a-zA-Z-_.]+"
+ * Value 'V#FP_SG#2__2023-09-29T07:17:50__in_stock_reminder' at 'name' failed to satisfy constraint: Member must satisfy regular expression pattern: [0-9a-zA-Z-_.]+"
  */
 const formatCompliantName = (name: string) => {
-  return name.replace(/[^0-9a-zA-Z-_.]+/g, "");
+  return name.replace(/[^0-9a-zA-Z-_.]+/g, ".");
 };
