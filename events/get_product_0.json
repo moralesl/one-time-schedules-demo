@@ -32,7 +32,7 @@
       "time": "28/Sep/2023:20:58:16 +0000",
       "timeEpoch": 1695934696365
     },
-    "pathParameters": { product_id: "test" },
+    "pathParameters": { "product_id": "test" },
     "isBase64Encoded": false
   }
   
