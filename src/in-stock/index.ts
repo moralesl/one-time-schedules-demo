@@ -31,6 +31,7 @@ const setProductAvailable = async (product_id: String) => {
     ExpressionAttributeValues: {
       ":isAvailable": "true",
     },
+    ConditionExpression: "attribute_exists(PK)",
     ReturnValues: "ALL_NEW",
   };
 
