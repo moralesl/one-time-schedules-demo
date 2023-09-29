@@ -64,6 +64,14 @@
       "name": "compile",
       "description": "Only compile"
     },
+    "create-products": {
+      "name": "create-products",
+      "steps": [
+        {
+          "exec": "ts-node scripts/create-products.ts"
+        }
+      ]
+    },
     "default": {
       "name": "default",
       "description": "Synthesize project files",

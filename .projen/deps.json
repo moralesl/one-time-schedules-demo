@@ -13,6 +13,18 @@
       "type": "build"
     },
     {
+      "name": "@aws-sdk/client-dynamodb",
+      "type": "build"
+    },
+    {
+      "name": "@aws-sdk/util-dynamodb",
+      "type": "build"
+    },
+    {
+      "name": "@faker-js/faker",
+      "type": "build"
+    },
+    {
       "name": "@types/node",
       "version": "^16",
       "type": "build"
