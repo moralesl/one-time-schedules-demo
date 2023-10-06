@@ -1,13 +1,49 @@
 {
   "dependencies": [
     {
+      "name": "@aws-cdk/aws-apigatewayv2-alpha",
+      "type": "build"
+    },
+    {
+      "name": "@aws-cdk/aws-apigatewayv2-integrations-alpha",
+      "type": "build"
+    },
+    {
+      "name": "@aws-cdk/aws-scheduler-alpha",
+      "type": "build"
+    },
+    {
+      "name": "@aws-sdk/client-dynamodb",
+      "type": "build"
+    },
+    {
+      "name": "@aws-sdk/util-dynamodb",
+      "type": "build"
+    },
+    {
+      "name": "@faker-js/faker",
+      "type": "build"
+    },
+    {
       "name": "@types/node",
       "version": "^16",
       "type": "build"
     },
     {
       "name": "aws-cdk",
-      "version": "^2.96.2",
+      "version": "^2.99.0",
+      "type": "build"
+    },
+    {
+      "name": "aws-sdk",
+      "type": "build"
+    },
+    {
+      "name": "axios",
+      "type": "build"
+    },
+    {
+      "name": "commander",
       "type": "build"
     },
     {
@@ -32,8 +68,12 @@
       "type": "build"
     },
     {
+      "name": "@types/aws-lambda",
+      "type": "runtime"
+    },
+    {
       "name": "aws-cdk-lib",
-      "version": "^2.96.2",
+      "version": "^2.99.0",
       "type": "runtime"
     },
     {

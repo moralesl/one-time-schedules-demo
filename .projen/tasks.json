@@ -64,6 +64,14 @@
       "name": "compile",
       "description": "Only compile"
     },
+    "create-products": {
+      "name": "create-products",
+      "steps": [
+        {
+          "exec": "ts-node scripts/create-products.ts"
+        }
+      ]
+    },
     "default": {
       "name": "default",
       "description": "Synthesize project files",
@@ -153,6 +161,15 @@
       "name": "pre-compile",
       "description": "Prepare the project for compilation"
     },
+    "set-products-out-of-stock": {
+      "name": "set-products-out-of-stock",
+      "steps": [
+        {
+          "exec": "ts-node scripts/set-products-out-of-stock.ts",
+          "receiveArgs": true
+        }
+      ]
+    },
     "synth": {
       "name": "synth",
       "description": "Synthesizes your cdk app into cdk.out",
@@ -186,13 +203,13 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/node,aws-cdk,esbuild,npm-check-updates,projen,ts-node,typescript,aws-cdk-lib,constructs"
+          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@aws-cdk/aws-apigatewayv2-alpha,@aws-cdk/aws-apigatewayv2-integrations-alpha,@aws-cdk/aws-scheduler-alpha,@aws-sdk/client-dynamodb,@aws-sdk/util-dynamodb,@faker-js/faker,@types/node,aws-cdk,aws-sdk,axios,commander,esbuild,npm-check-updates,projen,ts-node,typescript,@types/aws-lambda,aws-cdk-lib,constructs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/node aws-cdk esbuild npm-check-updates projen ts-node typescript aws-cdk-lib constructs"
+          "exec": "yarn upgrade @aws-cdk/aws-apigatewayv2-alpha @aws-cdk/aws-apigatewayv2-integrations-alpha @aws-cdk/aws-scheduler-alpha @aws-sdk/client-dynamodb @aws-sdk/util-dynamodb @faker-js/faker @types/node aws-cdk aws-sdk axios commander esbuild npm-check-updates projen ts-node typescript @types/aws-lambda aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"
