@@ -1,13 +1,12 @@
 const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkTypeScriptApp({
-  cdkVersion: '2.99.0',
+  cdkVersion: '2.100.0',
   defaultReleaseBranch: 'main',
   name: 'one-time-schedules-demo',
 
   deps: ['@types/aws-lambda'],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   devDeps: [
-    // Scriptings
     'aws-sdk',
     '@aws-sdk/client-dynamodb',
     '@aws-sdk/util-dynamodb',
