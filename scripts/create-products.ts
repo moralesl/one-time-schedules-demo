@@ -9,13 +9,13 @@ const tableName = "MenuItemAvailabilityTable";
 // Helper function to generate a random item
 function generateRandomItem(product_id: number): PutItemCommand {
     const randomItem = {
-      PK: product_id,
+      PK: `V#FP_SG#${product_id}`,
       SK: `P#apfel_schorle${product_id}`,
-      brandId: faker.datatype.number({ min: 1, max: 10 }).toString(),
-      categoryId: faker.datatype.number({ min: 1, max: 10 }).toString(),
+      brandId: faker.number.int({ min: 1, max: 10 }).toString(),
+      categoryId: faker.number.int({ min: 1, max: 10 }).toString(),
       ET: "P",
       isAvailable: true,
-      stockLevel: faker.datatype.number({ min: 1, max: 100 }).toString(),
+      stockLevel: faker.number.int({ min: 1, max: 100 }).toString(),
     };
   
     const params = {
@@ -31,7 +31,7 @@ async function populateTable() {
     for (let i = 0; i < 25; i++) {
       const params = generateRandomItem(i);
       await dynamodb.send(params);
-      console.log(`Item ${i + 1} inserted.`, params);
+      console.log(`Item ${i + 1} inserted.`);
     }
     console.log("Table populated successfully.");
   } catch (error) {
