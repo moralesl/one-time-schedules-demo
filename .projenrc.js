@@ -1,6 +1,6 @@
 const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkTypeScriptApp({
-  cdkVersion: '2.100.0',
+  cdkVersion: '2.104.0',
   defaultReleaseBranch: 'main',
   name: 'one-time-schedules-demo',
 
@@ -15,9 +15,10 @@ const project = new awscdk.AwsCdkTypeScriptApp({
     'axios',
 
     // CDK
-    '@aws-cdk/aws-scheduler-alpha',
-    '@aws-cdk/aws-apigatewayv2-alpha',
-    '@aws-cdk/aws-apigatewayv2-integrations-alpha'] /* Build dependencies for this module. */,
+    // '@aws-cdk/aws-scheduler-alpha',
+    // '@aws-cdk/aws-apigatewayv2-alpha',
+    // '@aws-cdk/aws-apigatewayv2-integrations-alpha', /* Build dependencies for this module. */
+  ],
   // packageName: undefined,  /* The 'name' in package.json. */
 
   mergify: false,
