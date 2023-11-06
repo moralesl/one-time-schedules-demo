@@ -15,9 +15,9 @@ const project = new awscdk.AwsCdkTypeScriptApp({
     'axios',
 
     // CDK
-    // '@aws-cdk/aws-scheduler-alpha',
-    // '@aws-cdk/aws-apigatewayv2-alpha',
-    // '@aws-cdk/aws-apigatewayv2-integrations-alpha', /* Build dependencies for this module. */
+    '@aws-cdk/aws-scheduler-alpha',
+    '@aws-cdk/aws-apigatewayv2-alpha',
+    '@aws-cdk/aws-apigatewayv2-integrations-alpha', /* Build dependencies for this module. */
   ],
   // packageName: undefined,  /* The 'name' in package.json. */
 

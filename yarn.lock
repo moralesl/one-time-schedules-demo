@@ -17,6 +17,21 @@
   resolved "https://registry.yarnpkg.com/@aws-cdk/asset-node-proxy-agent-v6/-/asset-node-proxy-agent-v6-2.0.1.tgz#6dc9b7cdb22ff622a7176141197962360c33e9ac"
   integrity sha512-DDt4SLdLOwWCjGtltH4VCST7hpOI5DzieuhGZsBpZ+AgJdSI2GCjklCXm0GCTwJG/SolkL5dtQXyUKgg9luBDg==
 
+"@aws-cdk/aws-apigatewayv2-alpha@^2.104.0-alpha.0":
+  version "2.104.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.104.0-alpha.0.tgz#00595a23a0d256cd19e1ac7fcb5f31d228d4130c"
+  integrity sha512-EbY2jMaaAuRVh9z+B/U59SDwrkGUzNjASbv4rzLxpgeEkJ63CX/S983O7tuyAP5qxxMge566c197rVBWx0ayTw==
+
+"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.104.0-alpha.0":
+  version "2.104.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.104.0-alpha.0.tgz#d5264173f100bc2621ca1a79e6dada808a29f74f"
+  integrity sha512-kSStZs/0a49FD502h5pYop7SJSdX4hMXyr3YVwTDTuoXZkSRNnibZa/QOL7w3QMMwcnvTf1W5nF70LxsVfrmkw==
+
+"@aws-cdk/aws-scheduler-alpha@^2.104.0-alpha.0":
+  version "2.104.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-scheduler-alpha/-/aws-scheduler-alpha-2.104.0-alpha.0.tgz#a0d1a73bbebbe06de386f526356e466a788b4140"
+  integrity sha512-HqYNVgiGngQrT0K8HGgUCJEFo1UcDaAS+BokEOtbAU5EdBarENLYjoXYlB1goBixiiAWO8FFTUhynJSCgY2a0w==
+
 "@aws-crypto/crc32@3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@aws-crypto/crc32/-/crc32-3.0.0.tgz#07300eca214409c33e3ff769cd5697b57fdd38fa"

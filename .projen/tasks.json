@@ -203,13 +203,13 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@aws-sdk/client-dynamodb,@aws-sdk/util-dynamodb,@faker-js/faker,@types/node,aws-cdk,aws-sdk,axios,commander,esbuild,npm-check-updates,projen,ts-node,typescript,@types/aws-lambda,aws-cdk-lib,constructs"
+          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@aws-cdk/aws-apigatewayv2-alpha,@aws-cdk/aws-apigatewayv2-integrations-alpha,@aws-cdk/aws-scheduler-alpha,@aws-sdk/client-dynamodb,@aws-sdk/util-dynamodb,@faker-js/faker,@types/node,aws-cdk,aws-sdk,axios,commander,esbuild,npm-check-updates,projen,ts-node,typescript,@types/aws-lambda,aws-cdk-lib,constructs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @aws-sdk/client-dynamodb @aws-sdk/util-dynamodb @faker-js/faker @types/node aws-cdk aws-sdk axios commander esbuild npm-check-updates projen ts-node typescript @types/aws-lambda aws-cdk-lib constructs"
+          "exec": "yarn upgrade @aws-cdk/aws-apigatewayv2-alpha @aws-cdk/aws-apigatewayv2-integrations-alpha @aws-cdk/aws-scheduler-alpha @aws-sdk/client-dynamodb @aws-sdk/util-dynamodb @faker-js/faker @types/node aws-cdk aws-sdk axios commander esbuild npm-check-updates projen ts-node typescript @types/aws-lambda aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"

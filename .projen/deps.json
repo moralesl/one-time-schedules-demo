@@ -1,6 +1,18 @@
 {
   "dependencies": [
     {
+      "name": "@aws-cdk/aws-apigatewayv2-alpha",
+      "type": "build"
+    },
+    {
+      "name": "@aws-cdk/aws-apigatewayv2-integrations-alpha",
+      "type": "build"
+    },
+    {
+      "name": "@aws-cdk/aws-scheduler-alpha",
+      "type": "build"
+    },
+    {
       "name": "@aws-sdk/client-dynamodb",
       "type": "build"
     },
