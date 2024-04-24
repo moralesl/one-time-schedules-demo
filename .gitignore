@@ -29,7 +29,6 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
-!/.projenrc.js
 !/.github/workflows/build.yml
 !/.github/workflows/upgrade.yml
 !/.github/pull_request_template.md
@@ -43,3 +42,4 @@ jspm_packages/
 /cdk.out/
 .cdk.staging/
 .parcel-cache/
+!/.projenrc.js
