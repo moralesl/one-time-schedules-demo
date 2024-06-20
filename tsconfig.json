@@ -31,7 +31,5 @@
     "src/**/*.ts",
     ".projenrc.js"
   ],
-  "exclude": [
-    "cdk.out"
-  ]
+  "exclude": []
 }
