@@ -1,6 +1,6 @@
 const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkTypeScriptApp({
-  cdkVersion: '2.104.0',
+  cdkVersion: '2.146.0',
   defaultReleaseBranch: 'main',
   name: 'one-time-schedules-demo',
 
