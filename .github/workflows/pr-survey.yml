@@ -1,0 +1,23 @@
+name: PR Survey
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  survey:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post survey comment
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Thank you for opening this PR! Please answer our quick survey:\n\n
+              1. How confident are you in this change? (React with 👍 for high, 👎 for low)\n
+              2. Does this PR require extensive testing? (React with ✅ for yes, ❌ for no)\n\n
+              Your feedback helps us improve our process. Thanks!'
+            })
