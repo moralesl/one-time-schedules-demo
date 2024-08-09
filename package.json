@@ -26,22 +26,22 @@
   "devDependencies": {
     "@aws-cdk/aws-apigatewayv2-alpha": "^2.114.1-alpha.0",
     "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.114.1-alpha.0",
-    "@aws-cdk/aws-scheduler-alpha": "^2.146.0-alpha.0",
-    "@aws-sdk/client-dynamodb": "^3.600.0",
-    "@aws-sdk/util-dynamodb": "^3.600.0",
+    "@aws-cdk/aws-scheduler-alpha": "^2.151.0-alpha.0",
+    "@aws-sdk/client-dynamodb": "^3.624.0",
+    "@aws-sdk/util-dynamodb": "^3.624.0",
     "@faker-js/faker": "^8.4.1",
     "@types/node": "^18",
     "aws-cdk": "^2.146.0",
-    "aws-sdk": "^2.1645.0",
-    "axios": "^1.7.2",
+    "aws-sdk": "^2.1671.0",
+    "axios": "^1.7.3",
     "commander": "^11.1.0",
-    "esbuild": "^0.21.5",
-    "projen": "^0.82.6",
+    "esbuild": "^0.23.0",
+    "projen": "^0.85.0",
     "ts-node": "^9",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@types/aws-lambda": "^8.10.140",
+    "@types/aws-lambda": "^8.10.143",
     "aws-cdk-lib": "^2.146.0",
     "constructs": "^10.0.5"
   },
